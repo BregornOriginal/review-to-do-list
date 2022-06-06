@@ -1,5 +1,6 @@
 /* eslint implicit-arrow-linebreak: ["error", "below"] */
 /* eslint no-multi-assign: ["error", { "ignoreNonDeclaration": true }] */
+/* eslint no-use-before-define: ["error", { "variables": false }] */
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
@@ -127,7 +128,7 @@ $addButton.addEventListener('click', (e) => {
   }
 });
 
-export const saveStorage = () => {
+export const store = () => {
   const data = JSON.parse(localStorage.getItem('list'));
   data.forEach((i) => {
     toDoTasks.push(i);
@@ -229,5 +230,4 @@ export const updateElementId = () => {
   });
 };
 
-
-window.addEventListener('load', saveStorage());
+window.addEventListener('load', store());
